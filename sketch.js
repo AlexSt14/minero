@@ -474,20 +474,21 @@ function checkPlayerDie(enemyContact) {
 		if (lives.length > 0) {
 			dieSound.play();
 			if(enemyContact) {
-				enemyAttack.play();
+				enemyAttack.play();				
 			}
 		}
 		//This sound will only play if player has no more lives, has logic to play the sound according to what killed you
 		if (lives.length < 1) {
 			if(enemyContact) {
 				environmentSound.stop();
-				enemyGameOver.play();
+				enemyGameOver.play();				
 			}
 			environmentSound.stop();
 			gameOver.play();
 		}
 		lastCalled = frameCount;
 	}
+	enemyAttackSound = false;
 	gameMenu();	
 }
 //Function that is called to set up everything and start the game once game lost or restart
